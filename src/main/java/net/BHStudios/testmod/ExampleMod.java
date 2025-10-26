@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package net.BHStudios.testmod;
 
 import org.slf4j.Logger;
 
