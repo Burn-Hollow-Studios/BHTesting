@@ -1,5 +1,8 @@
 package ch.bhstudios.bhtestingmod;
 
+import ch.bhstudios.bhtestingmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -34,6 +37,8 @@ public class BhTestingMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModItems.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -47,7 +52,10 @@ public class BhTestingMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.RAW_MYTHRILL);
+            event.accept(ModItems.MYTHRILL_INGOT);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
