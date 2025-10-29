@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "bhmaterialsandmetals:block/mythrill_ore"
+  }
+}

@@ -21,7 +21,7 @@ C:\\Users\\Shake\\.gradle\\caches\\neoformruntime\\assets
 
 # User Supplied Program Arguments
 --mod
-shakesawesomeweapons
+bhmaterialsandmetals
 --all
 --output
 "X:\\GitHub\\Burn Hollow\\BHTesting\\src\\generated\\resources"

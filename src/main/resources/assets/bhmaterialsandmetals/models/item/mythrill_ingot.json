@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "shakesawesomeweapons:item/mythrill_ingot"
+    "layer0": "bhmaterialsandmetals:item/mythrill_ingot"
   }
 
 }

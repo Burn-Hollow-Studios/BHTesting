@@ -1,4 +1,4 @@
-package ch.bhstudios.bhtestingmod;
+package ch.bhstudios.bhmaterialsandmetals;
 
 import java.util.List;
 

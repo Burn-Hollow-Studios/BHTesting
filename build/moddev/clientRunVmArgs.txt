@@ -18,5 +18,5 @@ jdk.naming.dns/com.sun.jndi.dns=java.naming
 -DmergeModules=jna-5.10.0.jar,jna-platform-5.10.0.jar
 -Djava.net.preferIPv6Addresses=system
 -Dfml.pluginLayerLibraries=
--Dneoforge.enabledGameTestNamespaces=shakesawesomeweapons
+-Dneoforge.enabledGameTestNamespaces=bhmaterialsandmetals
 -Dforge.logging.markers=REGISTRIES

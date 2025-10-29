@@ -1,7 +1,7 @@
-package ch.bhstudios.bhtestingmod;
+package ch.bhstudios.bhmaterialsandmetals;
 
-import ch.bhstudios.bhtestingmod.item.ModItems;
-import net.minecraft.world.item.CreativeModeTab;
+import ch.bhstudios.bhmaterialsandmetals.block.ModBlocks;
+import ch.bhstudios.bhmaterialsandmetals.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -21,14 +21,14 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(BhTestingMod.MOD_ID)
-public class BhTestingMod {
-    public static final String MOD_ID = "shakesawesomeweapons";
+@Mod(BhMaterialsAndMetals.MOD_ID)
+public class BhMaterialsAndMetals {
+    public static final String MOD_ID = "bhmaterialsandmetals";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public BhTestingMod(IEventBus modEventBus, ModContainer modContainer) {
+    public BhMaterialsAndMetals(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -38,7 +38,7 @@ public class BhTestingMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -56,6 +56,12 @@ public class BhTestingMod {
             event.accept(ModItems.RAW_MYTHRILL);
             event.accept(ModItems.MYTHRILL_INGOT);
         }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.MYTHRILL_BLOCK);
+            event.accept(ModBlocks.RAW_MYTHRILL_BLOCK);
+            event.accept(ModBlocks.MYTHRILL_ORE);
+
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -65,7 +71,7 @@ public class BhTestingMod {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = BhTestingMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = BhMaterialsAndMetals.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {

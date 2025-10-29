@@ -1,14 +1,13 @@
-package ch.bhstudios.bhtestingmod.item;
+package ch.bhstudios.bhmaterialsandmetals.item;
 
-import ch.bhstudios.bhtestingmod.BhTestingMod;
+import ch.bhstudios.bhmaterialsandmetals.BhMaterialsAndMetals;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
-    public static final DeferredRegister.Items ITEMS=DeferredRegister.createItems(BhTestingMod.MOD_ID);
+    public static final DeferredRegister.Items ITEMS=DeferredRegister.createItems(BhMaterialsAndMetals.MOD_ID);
 
     public static final DeferredItem<Item> RAW_MYTHRILL = ITEMS.register("raw_mythrill",
             ()-> new Item(new Item.Properties()));
